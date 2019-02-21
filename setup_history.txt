@@ -1,1 +1,77 @@
-test
+sudo vi /etc/ssh/sshd_config 
+sudo yum install -y git
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+~/.rbenv/bin/rbenv init
+source ~/.bash_profile
+rbenv -v
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+sudo ~/.rbenv/plugins/ruby-build/install.sh
+rbenv install -l
+sudo yum install -y openssl-devel readline-devel zlib-devel
+rbenv install 2.5.1
+rbenv install 2.5.3
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+. ~/.bash_profile 
+rbenv install --list
+rbenv install 2.6.0
+rbenv versions
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+sudo yum install -y gcc
+gcc --version
+rbenv install 2.5.3
+rbenv global 2.5.3
+rbenv version
+gem update --system
+gem install bundler
+gem install rails -v 5.2.1
+git clone https://github.com/creationix/nvm.git ~/.nvm
+source ~/.nvm/nvm.sh
+nvm ls-remote
+nvm install v10.15.0
+sudo yum install -y postgresql-server
+psql -V
+vi .bashrc 
+sudo systemctl start postgresql
+sudo systemctl status postgresql
+sudo yum remove postgresql-server
+sudo yum install -y https://yum.postgresql.org/9.6/redhat/rhel-7-x86_64/pgdg-redhat96-9.6-3.noarch.rpm
+sudo yum install -y postgresql96-server postgresql96-contrib
+psql --version
+sudo systemctl status postgresql
+sudo /usr/pgsql-9.6/bin/postgresql96-setup initdb
+sudo systemctl start postgresql-9.6.service
+sudo systemctl enable postgresql-9.6.service 
+sudo passwd postgres
+su - postgres
+gem install bundler
+sudo yum install -y libpq-dev
+sudo yum install -y postgresql postgresql-libs postgresql-devel postgresql-contrib
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+sudo yum install -y autoconf
+sudo yum install -y bison
+sudo yum install -y build-essential
+sudo yum install -y libyaml-dev
+sudo yum install -y libyaml-devel
+sudo yum groupinstall "Development Tools"
+sudo yum install -y libreadline6-devel
+sudo yum install -y libffi-devel
+sudo yum install -y libgdbm3
+sudo yum install -y libgdbm-devel
+sudo firewall-cmd --zone=public --add-port=3000/tcp
+sudo yum install -y fail2ban
+cd /etc/fail2ban/
+sudo cp -p jail.conf jail.local
+sudo mv jail.local jail.d/.
+cat jellybeans.vim
+curl -sSL https://get.haskellstack.org/ | sh
+stack ghci
+stack install ghc-mod
+vi ./.stack/global-project/stack.yaml 
+stack install ghc-mod hlint
+bg 1
+jobs
+ps -ef
+nohup stack install ghc-mod hlint &
+cd .stack/
